@@ -8,20 +8,24 @@ const CounterContainer = ({number, increase, decrease}) => {
   );
 };
 
-// const mapStateToProps = state => state.Counter.number
-// const mapDipatchToProps = dispatch => ({
-//   increase,
-//   decrease
-// })
+const mapStateToProps = state => ({
+  number : state.counter
+})
+const mapDipatchToProps = dispatch => ({
+  increase:() =>{dispatch(increase())},
+  decrease:() =>{dispatch(decrease())}
+})
 
-// export default connect(mapStateToProps, mapDipatchToProps)(CounterContainer)
+export default connect(mapStateToProps, mapDipatchToProps)(CounterContainer)
 
-export default connect(
-  state => ({
-    number: state.counter
-  }),
-  {
-    increase,
-    decrease
-  }
-)(CounterContainer)
+//connect 익명함수 사용
+
+// export default connect(
+//   state => ({
+//     number: state.counter
+//   }),
+//   {
+//     increase,
+//     decrease
+//   }
+// )(CounterContainer)
