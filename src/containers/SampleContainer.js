@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import Sample from "../components/Sample";
 import { getPost, getUsers } from "../modules/sample";
-import React from "react";
+import {useEffect} from "react"; 
 
-const {useEffect} = React;
+
 const SampleContainer = ({
   getPost,
   getUsers,
@@ -14,8 +14,8 @@ const SampleContainer = ({
 }) => {
   //클래스형 컴포넌트 였다면 componentDidMount
   useEffect(() => {
-    getPost(1);
-    getUsers(1);
+    getPost(10);
+    getUsers();
   }, [getPost, getUsers]);
   return(
     <Sample
