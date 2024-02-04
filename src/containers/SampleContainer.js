@@ -22,7 +22,7 @@ const SampleContainer = ({
       post={post}
       users={users}
       loadingPost={loadingPost}
-      lodingUsers={loadingUsers}
+      loadingUsers={loadingUsers}
     />
   )
 }

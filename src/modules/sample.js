@@ -1,4 +1,4 @@
-import { handleAction } from "redux-actions";
+import { handleActions } from "redux-actions";
 import * as api from '../lib/api'
 
 //액션 타입 선언
@@ -33,7 +33,7 @@ export const getPost = id => async dispatch => {
   }
 }
 
-export const getUsers = id => async dispatch => {
+export const getUsers = () => async dispatch => {
   dispatch({type : GET_USERS}) // 요청 시작한 것을 알림
   try{
     const response = await api.getUsers()
@@ -64,7 +64,7 @@ const initialstate = {
   users: null
 }
 
-const sample = handleAction(
+const sample = handleActions(
   {
     [GET_POST] : state => ({
       ...state,
