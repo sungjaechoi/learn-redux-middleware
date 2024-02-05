@@ -14,7 +14,7 @@ const SampleContainer = ({
 }) => {
   //클래스형 컴포넌트 였다면 componentDidMount
   useEffect(() => {
-    getPost(10);
+    getPost(1);
     getUsers();
   }, [getPost, getUsers]);
   return(
@@ -28,11 +28,11 @@ const SampleContainer = ({
 }
 
 export default connect(
-  ({sample})=>({
+  ({sample, loading})=>({
     post: sample.post,
     users: sample.users,
-    loadingPost : sample.loading.GET_POST,
-    loadingUsers : sample.loading.GET_USERS
+    loadingPost : loading['sample/GET_POST'],
+    loadingUser :loading['sampole/GET_USERS']
   }),
   {
     getPost,

@@ -9,6 +9,7 @@ import logger from 'redux-logger';
 import {thunk} from 'redux-thunk'
 
 const store = createStore(rootReducer,applyMiddleware(logger, thunk))
+console.log(store.getState())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
